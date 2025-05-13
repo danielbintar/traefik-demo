@@ -1,0 +1,27 @@
+http:
+  routers:
+    my-v1-router:
+      rule: "PathPrefix(`/api/v1`)"
+      entryPoints:
+        - web
+      service: my-service
+    my-v3-router:
+      rule: "PathPrefix(`/api/v3`)"
+      entryPoints:
+        - web
+      service: my-service
+      middlewares:
+        - add-id-header
+  services:
+    my-service:
+      loadBalancer:
+        servers:
+          - url: "http://localhost:8080"
+  middlewares:
+    add-id-header:
+      headers:
+        customRequestHeaders:
+          X-Request-Id: "Req-Traefik"
+        customResponseHeaders:
+          X-Response-Id: "Resp-Traefik"
+
