@@ -1,0 +1,15 @@
+log:
+  level: DEBUG
+
+entryPoints:
+  web:
+    address: ":80"
+
+providers:
+  file:
+    filename: gateway/routing.yaml
+
+experimental:
+  localPlugins:
+    headers:
+      moduleName: github.com/danielbintar/headers

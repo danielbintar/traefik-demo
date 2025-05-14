@@ -19,8 +19,9 @@ http:
           - url: "http://localhost:8080"
   middlewares:
     add-id-header:
-      headers:
-        customRequestHeaders:
-          X-Request-Id: "Req-Traefik"
-        customResponseHeaders:
-          X-Response-Id: "Resp-Traefik"
+      plugin:
+        headers:
+          customRequestHeaders:
+            X-Request-Id: "Req-Traefik"
+          customResponseHeaders:
+            X-Response-Id: "Resp-Traefik"

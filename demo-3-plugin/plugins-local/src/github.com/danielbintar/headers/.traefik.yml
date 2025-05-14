@@ -1,0 +1,25 @@
+# The name of your plugin as displayed in the Plugins Catalog web UI.
+displayName: Headers
+
+# For now, `middleware` is the only type available.
+type: middleware
+
+# The import path of your plugin.
+import: github.com/danielbintar/headers
+
+# A brief description of what your plugin is doing.
+summary: Manipulate headers
+
+# Medias associated to the plugin (optional)
+iconPath: foo/icon.png
+bannerPath: foo/banner.png
+
+# Configuration data for your plugin.
+# This is mandatory,
+# and Plugins Catalog will try to execute the plugin with the data you provide as part of its startup validity tests.
+testData:
+  headers:
+    customRequestHeaders:
+      foo: "bar"
+    customResponseHeaders:
+      foo: "bar"
